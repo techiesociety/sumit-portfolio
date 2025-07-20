@@ -1,0 +1,383 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    padding-right: 80px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 110px;
+    background-color: #000;
+}
+
+.hero-text h1 {
+    font-size: 120px;
+    color: #ff0051;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 34px;
+    color: #b3b3b3;
+    margin-top: 10px;
+}
+
+.hero-icons img {
+    width: 700px;
+}
+
+nav .fa-solid {
+    display: none;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.p-box {
+    position: relative;
+    display: inline-block;
+    height: 330px;
+    width: 550px;
+    border-radius: 20px;
+    background-color: #262626;
+    font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.p-box img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.p-box img:hover {
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.p-box .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 29px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s; /* Smooth transition */
+}
+
+.p-box:hover .overlay-text {
+    opacity: 1; /* Show text on hover */
+}
+
+.p-box p {
+    opacity: 70%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.p-box h1 {
+    padding-left: 30px;
+}
+
+.p-box button {
+    width: 120px;
+    height: 30px;
+    font-size: large;
+    border-radius: 5px;
+    margin-left: 30px;
+    background-color: #ff004f;
+    color: #fff;
+}
+/* ------------------------------------Contact---------------------------------------------- */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px; /* Adjust gap between divs */
+    margin-left: 40px;
+}
+
+.row div {
+    flex: 1; /* Allows divs to grow and shrink as needed */
+    max-width: 40%; /* Adjust max width to ensure divs don't exceed a certain size */
+    /* border: 2px solid rgb(67, 67, 67); Keeping the border style as given */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row div {
+        max-width: 90%; /* Adjust as needed for smaller screens */
+        margin-bottom: 20px; /* Add some space between divs on smaller screens */
+    }
+}
+
+.contact-left{
+    flex-basis: 35%;
+
+}
+.contact-right{
+    flex-basis: 35%;
+    
+}
+.contact-left p{
+    margin-top: 30px;
+    
+} 
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+} 
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab ;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+    text-decoration: none;
+    color: white;
+    padding:15px;
+    border-radius: 5px;
+    margin-top: 20px;
+  
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width:100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero-text h1 {
+        font-size: 90px;
+    }
+
+    .hero-text p {
+        font-size: 28px;
+    }
+
+    .hero-icons img {
+        width: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    nav ul {
+        gap: 30px;
+        padding-right: 50px;
+    }
+
+    .hero {
+        padding: 0px 50px;
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-icons img {
+        width: 400px;
+    }
+
+    .projects {
+        gap: 30px;
+    }
+
+    .p-box {
+        width: 100%;
+        max-width: 400px; /* Adjust as needed */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 60px;
+    }
+
+    .hero-text p {
+        font-size: 24px;
+    }
+
+    .hero-icons img {
+        width: 300px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #ff004f;
+        position: fixed;
+        top: 0%;
+        right: -200px;
+        width: 100px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .p-box {
+        width: 100%;
+        max-width: 350px; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 50px;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+    }
+
+    .hero-icons img {
+        width: 250px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .p-box {
+        width: 100%;
+        max-width: 300px; /* Adjust as needed */
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+}
+#msg{
+    color: #61b752;
+    margin-top: -77px ;
+    display: block;
+
+}

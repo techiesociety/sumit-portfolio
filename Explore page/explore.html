@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit's Designs</title>
+    <link rel="stylesheet" href="explore.css">
+    <script src="https://kit.fontawesome.com/d5e88c45c9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Sumit Logo">
+        </div>
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="../index.html#header">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Explore</h1>
+                <p>Sumit's Designs</p>
+            </div>
+            <div class="hero-icons">
+                <img src="icons.png" alt="Icons">
+            </div>
+        </section>
+    </main>
+
+    <div class="projects">
+        <div class="p-box"><img src="project-1.png" alt="">
+            <div class="overlay-text">Show Details</div>
+        </div>
+        <div class="p-box">
+            <h1>Porsche car UI</h1>
+            <p>Designed a sleek and modern Porsche car user interface using Figma -- Blending performance with elegance, just like Porsche itself.</p>
+
+            <button>See details</button>
+        </div>
+        <div class="p-box">
+
+        </div>
+        <div class="p-box"><img src="project 2.png" alt="">
+            <div class="overlay-text">Show Details</div>
+        </div>
+        <div class="p-box"><img src="project-3.png" alt="">
+            <div class="overlay-text">Show Details</div>
+        </div>
+        <div class="p-box">
+
+        </div>
+    </div>
+
+    <!-- -----------------------------------------------------Contact------------------------------------------------------------------ -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Book your design now!!</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>techiesociety@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>9602609008</p>
+                    <div class="social-icons">
+                        <a target="_blank" href="https://www.linkedin.com/in/sumitmandan/"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/sumitmandan.vision/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://youtube.com/@TheTechanPoint?si=_bYn-cDEJp-ZeCCY"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.threads.net/@sumitmandan"><i
+                                class="fa-brands fa-twitter-square"></i></a>
+
+                    </div>
+                    <a href="Sumit_CV.pdf" download class="btn btn2">Download Resume <i
+                            class="fa-solid fa-download"></i></a>
+                </div>
+                <div class="contact-left">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your E-Mail Here" required>
+                        <textarea name="Message" placeholder="Your Message" rows="6"></textarea>
+                        <button type="Submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemeu.style.right = "0";
+    }
+    function closemenu() {
+        sidemeu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwCv4Z3ULyszBhdkDyI1j98jTmgqEyyJbJ_1eMXNhIUFrDXUz7OlRGEKlRLU7L_1LDn/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully"
+                setTimeout(function () {
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</html>
