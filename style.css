@@ -70,6 +70,29 @@ nav ul li a:hover::after{
     color: #ff004f;
 }
 
+.status-card {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #1c1c1c;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-style: italic;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.status-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #00ff4c;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
 #about{
     padding: 80px 0;
     color: grey ;
